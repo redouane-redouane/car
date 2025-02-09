@@ -9,13 +9,26 @@
         // JavaScript function to toggle visibility of all car info details
         function toggleCarInfo() {
             const carInfoDetails = document.querySelectorAll('.car-info p'); // Select all <p> elements inside car-info
-            carInfoDetails.forEach(function(detail) {
-                if (detail.style.display === "none" || detail.style.display === "") {
-                    detail.style.display = "block"; // Show details
-                } else {
-                    detail.style.display = "none"; // Hide details
-                }
-            });
+            const carInfo = document.querySelector('.car-info');
+            if (carInfo.classList.contains('active')) {
+                carInfo.classList.remove('active');
+            } else {
+                carInfo.classList.add('active');
+            }
+        }
+
+        // Scroll to top button functionality
+        window.onscroll = function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollButton.style.display = "block"; // Show when scrolling down
+            } else {
+                scrollButton.style.display = "none"; // Hide when at the top
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </head>
@@ -25,9 +38,13 @@
     </header>
 
     <main>
-        <!-- Car Information Section (Collapsible) -->
-        <section class="car-info" onclick="toggleCarInfo()">
-            <h3>Car Information (Click to reveal)</h3>
+        <!-- Car Information Button -->
+        <button class="car-info" onclick="toggleCarInfo()">
+            <span class="icon">ℹ️</span> Car Info
+        </button>
+
+        <!-- Hidden Car Information Details (collapsible) -->
+        <section class="car-info-details">
             <p><strong>Make:</strong> Toyota</p>
             <p><strong>Model:</strong> Tundra</p>
             <p><strong>Year:</strong> 2021</p>
@@ -96,9 +113,10 @@
                     </li>
                 </ul>
             </li>
-
-            <!-- More job records can follow similarly -->
         </ul>
     </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
 </body>
 </html>
