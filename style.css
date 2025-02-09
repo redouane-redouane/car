@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #FFFFFF; /* Bright white text color */
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #1E1E1E; /* Darker header */
+    color: #4DB8FF; /* Blue accent for header */
+    padding: 10px 0;
+    text-align: center;
+}
+main {
+    padding: 20px;
+}
+h2 {
+    color: #4DB8FF; /* Blue accent color for headings */
+}
+
+/* Car Information Section (Collapsible) */
+.car-info {
+    background-color: #2C2C2C; /* Dark background for car info */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: fit-content;
+    position: fixed; /* Fixed position to stay on top */
+    top: 20px; /* Distance from the top of the page */
+    left: 20px; /* Distance from the left of the page */
+    z-index: 1000; /* High z-index to ensure it's above other content */
+    transition: background-color 0.3s ease;
+}
+.car-info:hover {
+    background-color: #3C3C3C; /* Slight hover effect */
+}
+.car-info h3 {
+    margin: 0;
+    color: #FFFFFF; /* White color for title */
+}
+.car-info p {
+    margin: 5px 0;
+    color: #FFFFFF; /* Bright white for details */
+    display: none; /* Hidden by default */
+}
+.maintenance-records {
+    list-style-type: none;
+    padding: 0;
+}
+.maintenance-records li {
+    background-color: #2C2C2C; /* Dark background for records */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.record-date {
+    font-weight: bold;
+    color: #4DB8FF; /* Blue for dates */
+}
+.record-description {
+    margin-top: 5px;
+    color: #FFFFFF; /* Bright white for descriptions */
+}
+.record-details {
+    font-size: 14px;
+    color: #FFFFFF; /* Bright white for details */
+}
+.installed-parts {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+.installed-parts li {
+    list-style-type: none;
+    color: #FFFFFF;
+}
+.part-name {
+    font-weight: bold;
+}
+.part-price,
+.part-reference {
+    font-size: 13px;
+    color: #B0B0B0; /* Lighter color for part details */
+}
+/* Part image styles */
+.part-image {
+    max-width: 100px; /* Small size by default */
+    margin-top: 5px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+/* When hovering, the image will scale up */
+.part-image:hover {
+    transform: scale(2); /* Increase size to 2x */
+    z-index: 10; /* Ensures the image appears above the text */
+}
+
+.receipt-image {
+    max-width: 100px;
+    margin-top: 5px;
+    display: block;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+/* When hovering, the image will scale up */
+.receipt-image:hover {
+    transform: scale(2); /* Increase size to 2x */
+    z-index: 10; /* Ensures the image appears above the text */
+}
+
+.labor-cost {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4DB8FF;
+}

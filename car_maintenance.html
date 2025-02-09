@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Maintenance Record</title>
+    <link rel="stylesheet" href="./style.css"> <!-- Link to the external CSS file -->
+    <script>
+        // JavaScript function to toggle visibility of all car info details
+        function toggleCarInfo() {
+            const carInfoDetails = document.querySelectorAll('.car-info p'); // Select all <p> elements inside car-info
+            carInfoDetails.forEach(function(detail) {
+                if (detail.style.display === "none" || detail.style.display === "") {
+                    detail.style.display = "block"; // Show details
+                } else {
+                    detail.style.display = "none"; // Hide details
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Car Maintenance Record</h1>
+    </header>
+
+    <main>
+        <!-- Car Information Section (Collapsible) -->
+        <section class="car-info" onclick="toggleCarInfo()">
+            <h3>Car Information (Click to reveal)</h3>
+            <p><strong>Make:</strong> Toyota</p>
+            <p><strong>Model:</strong> Tundra</p>
+            <p><strong>Year:</strong> 2021</p>
+            <p><strong>License Plate:</strong> WW-156-QA</p>
+            <p><strong>VIN:</strong> 1HGBH41JXMN109186</p>
+        </section>
+
+        <!-- Maintenance History Section -->
+        <h2>Maintenance History</h2>
+        <ul class="maintenance-records">
+            <li>
+                <div class="record-date">January 10, 2025</div>
+                <div class="record-description">
+                    <strong>Oil Change</strong>
+                </div>
+                <div class="record-details">
+                    Changed the engine oil and replaced the oil filter.
+                </div>
+                <div class="labor-cost">Labor Cost: $50.00</div>
+                <img src="assets/img/20220428_162508.jpg" alt="Receipt for Oil Change" class="receipt-image">
+                <ul class="installed-parts">
+                    <li>
+                        <span class="part-name">Oil Filter</span><br>
+                        <span class="part-price">Price: $15.99</span><br>
+                        <span class="part-reference">Reference: 1234-OF</span><br>
+                        <img src="assets/img/20221007_134825.jpg" alt="Oil Filter" class="part-image">
+                    </li>
+                    <li>
+                        <span class="part-name">Engine Oil</span><br>
+                        <span class="part-price">Price: $29.99</span><br>
+                        <span class="part-reference">Reference: 5678-EO</span><br>
+                        <img src="images/engine-oil.jpg" alt="Engine Oil" class="part-image">
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <div class="record-date">December 20, 2024</div>
+                <div class="record-description">
+                    <strong>Brake Job</strong>
+                </div>
+                <div class="record-details">
+                    Replaced front brake pads, rotors resurfaced, and brake fluid topped off.
+                </div>
+
+                <div class="labor-cost">Labor Cost: $75.00</div>
+                <img src="images/receipt.jpg" alt="Receipt for Brake Job" class="receipt-image">
+
+                <ul class="installed-parts">
+                    <li>
+                        <span class="part-name">Front Brake Pads</span><br>
+                        <span class="part-price">Price: $89.99</span><br>
+                        <span class="part-reference">Reference: 3456-BP</span><br>
+                        <img src="images/brake-pads.jpg" alt="Brake Pads" class="part-image">
+                    </li>
+                    <li>
+                        <span class="part-name">Brake Rotors</span><br>
+                        <span class="part-price">Price: $120.00</span><br>
+                        <span class="part-reference">Reference: 7890-BR</span><br>
+                        <img src="images/brake-pads.jpg" alt="Brake Rotors" class="part-image">
+                    </li>
+                    <li>
+                        <span class="part-name">Brake Fluid</span><br>
+                        <span class="part-price">Price: $15.00</span><br>
+                        <span class="part-reference">Reference: 1122-BF</span>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- More job records can follow similarly -->
+        </ul>
+    </main>
+</body>
+</html>
